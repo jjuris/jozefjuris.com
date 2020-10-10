@@ -12,10 +12,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-179828371-1');
   </script>
-  <title>Jozef Juris - photographer kitesurfer thaiboxer</title>
+  <title>{{cookiecutter.event_name}} by Jozef Juris</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
@@ -26,7 +25,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
   <div id="wrapper">
     <!-- Header -->
     <header id="header">
-      <h1><a href="https://jozefjuris.com"><strong>Gallery</strong> by jozefjuris.com</a></h1>
+      <h1><a href="https://jozefjuris.com"><strong>{{cookiecutter.event_name}}</strong> by jozefjuris.com</a></h1>
       <nav>
         <ul>
           <li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
@@ -35,11 +34,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     </header>
     <!-- Main -->
     <div id="main">
+      {% for i in range(1, cookiecutter.images_count|int+1) %}
       <article class="thumb">
-        <a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt="" /></a>
-        <h2>Magna feugiat lorem</h2>
-        <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+        <a href="images/fulls/{{i}}.jpg" class="image"><img src="images/thumbs/{{i}}.jpg" alt="" /></a>
+        <h2>{{cookiecutter.event_name}}</h2>
       </article>
+      {% endfor %}
     </div>
     <!-- Footer -->
     <footer id="footer" class="panel">
